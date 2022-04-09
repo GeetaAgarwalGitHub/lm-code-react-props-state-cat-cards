@@ -80,13 +80,22 @@ function App() {
       favFoods: ["milk"],
       birthYear: 2021,
     },
+	{
+		name: "Captain Catface",
+		species: "Sea Cattain",
+		favFoods: ["fish, rum"],
+		birthYear: 2016,
+	  },
   ]);
+  const catCount = cats.length;
+
+
   console.log("our preetie", cats);
   // JavaScript code can be inserted here!
   return (
     <>
       <Navbar />
-      <Header />
+      <Header NumberOfElements={catCount}/>
 
       <main>
         <h1>Cats Displayed using props</h1>
