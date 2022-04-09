@@ -91,21 +91,24 @@ function App() {
       <main>
         <h1>Cats Displayed using props</h1>
         <div className="cards__wrapper">
-          {cats.map((cat) => (
+
+			
+          {cats.map((cat, index) => (
             <CatCard.CatCardUsingProps 
               name={cat.name}
               species={cat.species}
               favFoods={cat.favFoods}
               birthYear={cat.birthYear}
+			  catIndex = {index}
             />
           ))}
         </div>
-		<h1>Cats Displayed using object</h1>
+		{/*<h1>Cats Displayed using object</h1>
         <div className="cards__wrapper">
 {cats.map ((cat) => (
 	<CatCard.CatCardUsingObject cat = {cat} />
 ))}
-        </div>
+        </div> */}
       </main>
 
       <Footer />
