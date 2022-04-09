@@ -92,7 +92,7 @@ function App() {
         <h1>Cats Displayed using props</h1>
         <div className="cards__wrapper">
           {cats.map((cat) => (
-            <CatCard.CatCard 
+            <CatCard.CatCardUsingProps 
               name={cat.name}
               species={cat.species}
               favFoods={cat.favFoods}
@@ -103,7 +103,7 @@ function App() {
 		<h1>Cats Displayed using object</h1>
         <div className="cards__wrapper">
 {cats.map ((cat) => (
-	<CatCard.CatCard1 cat = {cat} ></CatCard.CatCard1>
+	<CatCard.CatCardUsingObject cat = {cat} />
 ))}
         </div>
       </main>
