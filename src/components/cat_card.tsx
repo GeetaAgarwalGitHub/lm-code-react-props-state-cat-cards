@@ -133,14 +133,16 @@ interface CatCardProps{
             <p className="card__text">Favourite Food(s): {prop.favFoods}</p>
             <p className="card__text">Birth Year: {prop.birthYear}</p>
             
-            <CatImage 
-			img={images[prop.catIndex].image}
-			alt_Text={images[prop.catIndex].altText}
-			licenceType={images[prop.catIndex].licenceType}
-			licenceUrl={images[prop.catIndex].licenceUrl}
-			attributionName={images[prop.catIndex].attributionName}
-			attributionUrl={images[prop.catIndex].attributionUrl}
-		/>
+            {prop.catIndex < images.length && (
+				<CatImage
+					img={images[prop.catIndex].image}
+					alt_Text={images[prop.catIndex].altText}
+					licenceType={images[prop.catIndex].licenceType}
+					licenceUrl={images[prop.catIndex].licenceUrl}
+					attributionName={images[prop.catIndex].attributionName}
+					attributionUrl={images[prop.catIndex].attributionUrl}
+				/>
+			)}
         </div>;
 
 //  const CatCardUsingObject : React.FC <CatObject>= (catObject) =>
