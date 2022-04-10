@@ -6,42 +6,50 @@ import { useState } from "react";
 import Cat from "./data/cat";
 import CatCard from "./components/cat_card";
 import catDataImages from "./data/catData";
+import Dog from "./data/dog";
+import DogCard from "./components/dog_card";
+import DogData from "./data/dog-data";
 
 function App() {
-	
-	  const [cats, setCats] = useState<Array<Cat>>(catDataImages.catData);
+  const [cats, setCats] = useState<Array<Cat>>(catDataImages.catData);
+  const [dogs, setDogs] = useState<Array<Dog>>(DogData);
   const catCount = cats.length;
+  const dogCount = dogs.length;
 
-
-  console.log("our preetie", cats);
   // JavaScript code can be inserted here!
   return (
     <>
       <Navbar />
-      <Header NumberOfElements={catCount}/>
+      <Header NumberOfElements={catCount} Animal={"Cat(s)"} />
 
       <main>
         <h1>Cats Displayed using props</h1>
         <div className="cards__wrapper">
-
-		{/* cats.map((cat, index) => <CatCard key={index} image={catDataImages.CatImages.find(image => image.id === cat.id)} />)*/}
           {cats.map((cat, index) => (
-            <CatCard.CatCardUsingProps 
-				 id= {cat.id}
+            <CatCard.CatCardUsingProps
+              id={cat.id}
               name={cat.name}
               species={cat.species}
               favFoods={cat.favFoods}
               birthYear={cat.birthYear}
-			  catIndex = {index}
+              catIndex={index}
             />
           ))}
         </div>
-		{/*<h1>Cats Displayed using object</h1>
+
+        <Header NumberOfElements={dogCount} Animal={"Dog(s)"} />
+
+        <h1>Dogs Displayed using props</h1>
         <div className="cards__wrapper">
-{cats.map ((cat) => (
-	<CatCard.CatCardUsingObject cat = {cat} />
-))}
-        </div> */}
+          {dogs.map((dog) => (
+            <DogCard.DogCardUsingProps
+              name={dog.name}
+              species={dog.species}
+              favFoods={dog.favFoods}
+              birthYear={dog.birthYear}
+            />
+          ))}
+        </div>
       </main>
 
       <Footer />
